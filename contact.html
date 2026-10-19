@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact RedlineMD</title>
+<meta name="description" content="Contact RedlineMD about contract review, pricing, referrals or privacy.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<div id="site-header" data-current="contact"></div>
+<main>
+  <section class="phero on-dark" data-dark-top style="padding-bottom:64px">
+    <div class="wrap"><div class="copy">
+      <p class="eyebrow">Contact</p>
+      <h1>Review it before you sign it.</h1>
+      <p class="lede">Pick a topic, tell us how to reach you, and we’ll get back to you.</p>
+    </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-stack">
+      <div class="sec-copy">
+        <p class="eyebrow">Talk to us</p>
+        <h2>We’re here to help.</h2>
+      </div>
+      <ul class="facts">
+        <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="t"><b>Email</b><span>[contact email]</span></span></li>
+        <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="t"><b>Response time</b><span>[Response time]</span></span></li>
+        <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="t"><b>Privacy</b><span>Your contract is never part of this form.</span></span></li>
+        <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span class="t"><b>No account needed</b><span>Get your analysis without creating one.</span></span></li>
+      </ul>
+      <div class="formcard">
+        <form class="form" id="cform" novalidate>
+          <fieldset>
+            <legend>What is this about?</legend>
+            <div class="pills">
+              <label class="pill"><input type="radio" name="topic" value="Contract review" checked><span>Contract review</span></label>
+              <label class="pill"><input type="radio" name="topic" value="Pricing"><span>Pricing &amp; plans</span></label>
+              <label class="pill"><input type="radio" name="topic" value="Referral"><span>Referral</span></label>
+              <label class="pill"><input type="radio" name="topic" value="Privacy"><span>Privacy</span></label>
+              <label class="pill"><input type="radio" name="topic" value="Other"><span>Other</span></label>
+            </div>
+          </fieldset>
+          <div class="fld"><label class="t" for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="grid2">
+            <div class="fld"><label class="t" for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+            <div class="fld"><label class="t" for="f-phone">Mobile</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          </div>
+          <div class="fld"><label class="t" for="f-addr">Address</label><input id="f-addr" name="address" type="text" autocomplete="street-address"></div>
+          <p class="priv">We use your details only to answer you. Your contract is never part of this form.</p>
+          <button class="btn btn-ink btn-block" type="submit">Send message</button>
+          <p class="ok" id="cok" role="status">Prototype: this form is a design mock-up, so nothing was sent.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+<script src="common.js"></script>
+</body></html>
