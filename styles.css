@@ -585,3 +585,41 @@ section{padding-block:64px}
 @media (min-width:1232px){
   :root{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px))}
 }
+
+
+/* v27 fixes: no horizontal overflow on phones; solid white mobile menu (8pt grid, minimal) */
+html,body{max-width:100%;overflow-x:clip}
+.lede .deal{white-space:normal}
+.lede .deal strong,.lede .deal s{white-space:nowrap}
+.hero-grid>*,.hero .lede{min-width:0;max-width:100%;overflow-wrap:break-word}
+
+.menu-btn{transition:background-color .2s ease,border-color .2s ease,transform .2s ease}
+.menu-btn:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.5)}
+.topbar.on-light .menu-btn:hover{background:rgba(10,21,48,.1);border-color:rgba(10,21,48,.32)}
+.menu-btn:active{transform:scale(.96)}
+
+.topbar .glass.sheet,.topbar.on-light .glass.sheet{
+  top:80px;padding:8px;border-radius:24px;
+  background:#fff;color:var(--text);
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  border:1px solid var(--line);
+  box-shadow:0 16px 40px rgba(10,21,48,.16)
+}
+.topbar .glass.sheet::before{display:none}
+.topbar .sheet:not([hidden]){animation:sheetIn .24s ease both}
+@keyframes sheetIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.topbar .sheet a.l,.topbar.on-light .sheet a.l{
+  min-height:56px;padding:0 16px 0 24px;gap:16px;color:var(--text);
+  transition:background-color .2s ease,color .2s ease
+}
+.topbar .sheet a.l::after{
+  content:"";flex:0 0 8px;width:8px;height:8px;margin-left:auto;
+  border-top:2px solid currentColor;border-right:2px solid currentColor;
+  transform:rotate(45deg);opacity:.4;transition:transform .2s ease,opacity .2s ease
+}
+.topbar .sheet a.l:hover,.topbar.on-light .sheet a.l:hover{background:rgba(27,42,92,.07);color:var(--navy)}
+.topbar .sheet a.l:hover::after{opacity:1;transform:translateX(4px) rotate(45deg)}
+.topbar .sheet a.l[aria-current="page"],.topbar.on-light .sheet a.l[aria-current="page"]{background:rgba(27,42,92,.1);color:var(--navy);font-weight:600}
+.topbar .sheet a.l[aria-current="page"]::after{opacity:1}
+.topbar .sheet a.l:focus-visible{outline:3px solid var(--navy);outline-offset:-3px}
+@media (prefers-reduced-motion:reduce){.topbar .sheet:not([hidden]){animation:none}.menu-btn,.topbar .sheet a.l,.topbar .sheet a.l::after{transition:none}}
