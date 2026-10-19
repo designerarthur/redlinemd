@@ -489,3 +489,99 @@ h1,h2,h3{letter-spacing:-0.025em}
 .about-points b{font:600 16px/24px var(--body);color:var(--text)}
 .about-points span{font:400 16px/24px var(--body);color:var(--text2)}
 @media (max-width:600px){.about-points li{grid-template-columns:1fr;gap:4px}}
+
+/* ============================================================
+   MOBILE-FIRST CONTAINER SYSTEM (8-point grid)
+   Base = phone. Larger screens only add (min-width), never undo.
+   Gutter: 16 (phone) > 24 (tablet) > 16 again once the 1200 container caps (inner 1168).
+   Section rhythm: 64 (phone) > 80 (tablet) > 96 (desktop).
+   ============================================================ */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+img,video,svg{max-width:100%}
+section{padding-block:64px}
+.benefits+section{padding-top:96px}
+.phero{padding-block:128px 56px}
+.hero-grid{padding-top:112px;padding-bottom:128px;gap:32px}
+.head{margin-bottom:32px}
+.hand{margin-top:32px}
+
+/* About: one column on phones, media first, 8pt gaps */
+.about-split{grid-template-columns:minmax(0,1fr);gap:32px;align-items:start}
+.about-photo{height:auto;aspect-ratio:4/5;max-height:480px;width:100%;border-radius:24px}
+.about-photo video{width:100%;height:100%;object-fit:cover}
+.about-copy{max-width:none;width:100%;gap:24px}
+.about-copy h2{font:700 32px/40px var(--display);max-width:none}
+.about-copy p,.about-points{max-width:none}
+.about-points li{grid-template-columns:1fr;gap:4px}
+.about-copy .btn,.cta-col .btn,.hand .btn,.copyrow .btn{width:100%}
+.hand .btn{max-width:360px}
+
+/* Touch targets: 48 minimum */
+.foot a{min-height:48px}
+.sheet a.l{min-height:56px}
+.legal{padding-bottom:72px}           /* keeps legal text clear of the help bubble */
+.agent-fab{width:56px;height:56px}
+
+/* Cards: single column, 8px rhythm */
+.plans,.quotes,.info{grid-template-columns:minmax(0,1fr);gap:16px}
+.refer{padding:24px;gap:32px}
+.refer-steps{grid-template-columns:minmax(0,1fr);gap:8px}
+.contact-stack{gap:32px}
+.contact-stack .facts{grid-template-columns:minmax(0,1fr);gap:8px}
+.contact-stack .formcard{padding:24px}
+.contact-stack .form{grid-template-columns:minmax(0,1fr);gap:24px}
+.contact-stack .form .grid2{display:contents}
+.contact-stack .form>.fld:nth-of-type(1),.contact-stack .form .grid2 .fld{grid-column:1/-1}
+.contact-stack .form .btn-block{width:100%;min-width:0}
+.offer,.band,.figure{padding:24px}
+
+/* Tablet >= 600 */
+@media (min-width:600px){
+  :root{--gl:max(24px,env(safe-area-inset-left,0px));--gr:max(24px,env(safe-area-inset-right,0px))}
+  section{padding-block:80px}
+  .plans,.quotes{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .info{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .contact-stack .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact-stack .form{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .contact-stack .form>.fld:nth-of-type(1),.contact-stack .form .grid2 .fld{grid-column:auto}
+  .contact-stack .form .btn-block{width:auto;min-width:240px}
+  .contact-stack .formcard,.refer{padding:32px}
+  .offer,.band{padding:32px}
+  .about-photo{aspect-ratio:16/10;max-height:none}
+  .refer-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .about-copy .btn,.cta-col .btn,.hand .btn,.copyrow .btn{width:auto}
+  .cta-col .btn{width:100%}
+}
+
+/* Desktop >= 880 */
+@media (min-width:880px){
+  section{padding-block:96px}
+  .phero{padding-block:152px 80px}
+  .hero-grid{padding-top:136px;padding-bottom:136px;gap:48px}
+  .benefits+section{padding-top:128px}
+  .head{margin-bottom:48px}
+  .hand{margin-top:48px}
+  .about-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:center}
+  .about-photo{aspect-ratio:auto;height:576px}
+  .about-copy{max-width:520px}
+  .about-copy h2{font:700 40px/48px var(--display);max-width:520px}
+  .about-copy p{max-width:480px}
+  .about-points{max-width:520px}
+  .about-points li{grid-template-columns:168px minmax(0,1fr);gap:16px}
+  .plans{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .quotes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .info{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .contact-stack{gap:40px}
+  .contact-stack .facts{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .contact-stack .formcard{padding:48px}
+  .refer{padding:48px;gap:64px}
+  .offer{padding:48px}
+  .band{padding:56px}
+  .figure{padding:48px}
+  .agent-fab{width:64px;height:64px}
+  .legal{padding-bottom:24px}
+}
+/* Container caps at 1200: back to the 16px gutter so inner = 1168 (3 cards of 384 + 2 gaps of 8) */
+@media (min-width:1232px){
+  :root{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px))}
+}
